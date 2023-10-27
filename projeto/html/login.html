@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/pop_login.css">
+</head>
+    <body id="login-tela">
+        <section id="icone-login">
+            <img
+            src="/imagem/logo.jpg"
+            alt="logo"/>
+        </section>
+        <form>
+           <div id="titulo-login">
+               <h1>Faça seu login!</h1>
+            <span id="sair" onclick="btnSair()">
+                <a href="#">
+                  <img src="/imagem/ICONES/cruz.png" alt="" >
+                </a> 
+             </span>
+           </div>
+
+            <div id="conteiner-login">
+                <div class="entrada">
+                    <input id="emailCampo" name="email" type="email" class="input" >
+                    <label for="email" class="label-login">E-mail
+                        <img src="/imagem/ICONES/envelope.png" alt="email">
+                    </label>
+                </div>
+
+                <div class="entrada">
+                    <input id="senhaCampo" name="senha" type="password" maxlength="12" class="input">
+                    <label for="senha" class="label-login">Senha
+                        <img src="/imagem/ICONES/chave.png" alt="chave">
+                    </label>
+                    <button id="visualizar">                      
+                       <img id="iconeVisivel" src="/imagem/ICONES/olho-fechado.png" alt="visualizar"></img>
+                    </button>
+                </div>
+                <button id="loginConfirmar"  type="submit">
+                    <span>Entrar</span>
+                </button>
+            </div>
+
+            <div class="login-btn">
+                <p class="iten-login-btn">
+                    <span>Cadastre-se</span>
+                    <button type="button" id="email">Fazer cadastro</button>
+                </p>
+                <p class="iten-login-btn">
+                    <span>Esqueceu a senha?</span>
+                    <button type="button" id="senha">Nova senha</button>
+                </p>
+
+            </div>
+
+            
+           
+        </form>
+    </body>
+    <script src="/js/login.js"></script>
+</html>

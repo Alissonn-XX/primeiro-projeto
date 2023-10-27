@@ -1,0 +1,259 @@
+@import url('style.css');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+}
+@media (min-width:300px) and (max-width: 600px){
+   body{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--corFundoSegundaria);
+   } 
+#titulo-login{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 5px;
+}
+
+#titulo-login span img{
+    display: inline-block;
+    position: absolute;
+    width: 15px;
+    right: 10px;
+    filter: drop-shadow(2px -1px 5px rgb(246, 246, 246));
+}
+
+ #sair{
+    display: inline-block;
+    cursor: pointer;
+ }
+
+ #sair::before{
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(116, 129, 133);
+    box-shadow: 0 0 2px 2px rgba(107, 107, 107, 0.7);
+ }
+
+h1{
+  width: 100%;
+  margin: 0 0 0 -15px;
+  color: rgb(58, 58, 58);
+  text-align: center;
+  text-decoration: underline #fdfdfd;
+}
+
+#icone-login img{
+    display: block;
+    margin: 0 0 20px 0 ;
+    width:35px;
+    height:35px;
+
+      border-radius: 50%;
+      box-shadow: 0 0 2px 2px rgba(0,0,0, 0.3);
+      object-fit: contain;
+      animation: animar-icone 2s infinite ease;
+}
+
+form{
+    display: block;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--corFundoPrincipal);
+    backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px);
+   box-shadow: 0 0 2px 2px rgba(107, 107, 107, 0.3);
+   animation-delay: .2s;
+   animation: login .4s ease;
+}
+ 
+  #conteiner-login{
+    margin: 2em 0 0 0;
+  }
+  
+  .entrada{
+    position: relative;
+  }
+
+  .entrada + .entrada{
+    margin: 25px 0 0 0;
+  }
+
+  .input{
+    width: 280px;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 2px solid #fdfdfd;
+    background-color: transparent;
+
+    font-size: 17px;
+    color: #313131;
+  }
+
+  .label-login{
+    position: absolute;
+    top: 0;
+    left: -2px;
+    transform: translate(5px,10px);
+    transform-origin: left;
+    transition: transform 0.25s;
+    pointer-events: none;
+    color: rgb(36, 48, 59);
+    font-size: large;
+  }
+
+  .label-login img{
+    display: inline-block;
+    width: 20px;
+    margin: 5px 0 0 0;
+  }
+
+  #visualizar{
+    position: absolute;
+    display: none;
+    width: 25px;
+    top: 10px; 
+    left: 250px;
+    background: transparent;  
+    border: none;
+    
+  }
+
+  #visualizar img{
+    width: 100%;
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  .senha-oculta{
+    width: 100%;
+  }
+
+  .input:focus-visible ~ .label-login ~ #visualizar,
+  .input:valid ~ .label-login ~ #visualizar{
+    display: block;
+    width: 30px;
+    transition: width 0.5s;
+  }
+
+  .input:focus-visible ~ .label-login  img,
+  .input:valid ~ .label-login  img{
+    filter: drop-shadow(-1px -1px 2px #7e7e7e);
+  }
+  
+  .input:focus-visible ~ .label-login,
+  .input:valid ~ .label-login{
+    transform: translate(0,-25px) scale(.8);
+    color: #454545;
+    font-weight: 500;
+  }
+
+  .input:is(:focus-visible, :valid){
+    border-bottom: 2px solid var(--corFundoSegundaria);
+    transition: width 0.5s ease,
+                border-bottom 0.5s ease;
+  }
+
+  
+  
+  .login-btn{
+    display: flex;
+    width: 100%;
+    margin: 20px 0 0 0;
+  }
+
+  #loginConfirmar{
+    position: relative;
+    display: inline-block;
+    padding: 5px  15px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid var(--corFundoPrincipal);
+    background: var(--corFundoSegundaria);
+    color: #fdfdfd;
+    cursor: pointer;
+  }
+
+  #loginConfirmar:active{
+    background: rgba(107, 107, 107, 0.3);
+    color: #ffffff;
+    border: 2px solid #fdfdfd;
+  }
+  
+  .iten-login-btn + .iten-login-btn{
+    margin: 0 10px;
+  }
+
+  
+
+  .iten-login-btn button{
+    display: inline-block;
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #fdfdfd;
+    border-radius: 5px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    background: rgba(146, 146, 146, 0.3);
+    
+  }
+
+  .iten-login-btn span{
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 17px;
+    letter-spacing: -1px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+
+  .iten-login-btn #email:hover{
+    color: #424242;
+    background: rgba(69, 238, 95, 0.8);
+    box-shadow: 0 0 2px 2px rgba(107, 107, 107, 0.3);
+  }
+
+  .iten-login-btn #senha:hover{
+    color: #424242;
+    background: rgba(69, 207, 238, 0.8);
+    box-shadow: 0 0 2px 2px rgba(107, 107, 107, 0.3);
+  }
+
+  
+
+  @keyframes login{
+    0%{opacity: 0;}
+    100%{transform: scale(0.9);}
+  }
+
+  @keyframes animar-icone{
+    50%{transform: translateY(5px); opacity: .7;}
+}
+ 
+}   
+
